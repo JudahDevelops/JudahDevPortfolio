@@ -306,16 +306,35 @@ footer {
   margin-top: 0;
 }
 
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
 .social-links a {
-  color: #eaeaea;
-  font-size: 2rem;
-  margin-right: 1.5rem;
+  color: #bbb;
+  font-size: 1.8rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover {
   color: #fff;
   transform: scale(1.1);
+}
+
+.email-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #bbb;
+  font-size: 1.8rem; /* Match icon size */
+}
+
+.email-display span {
+  font-size: 1rem; /* Reset for text */
+  line-height: 1;
 }
 
 .footer-bottom {

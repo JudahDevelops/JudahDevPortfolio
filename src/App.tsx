@@ -66,23 +66,24 @@ function App() {
 
           <section id="projects">
             <h2>Projects & Impact</h2>
+            <p className="section-intro">Here are some of my project repositories:</p>
             <div className="projects-grid">
-              <div className="project-card">
+              <a href="https://github.com/JudahDevelops/pomodoro-timer" className="project-card" target="_blank" rel="noopener noreferrer">
                 <h3>Pomodoro Timer</h3>
                 <p>A productivity tool to enhance focus using customizable work/break intervals.</p>
-              </div>
-              <div className="project-card">
+              </a>
+              <a href="https://github.com/JudahDevelops/react-calculator" className="project-card" target="_blank" rel="noopener noreferrer">
                 <h3>React Calculator</h3>
                 <p>A dynamic, responsive calculator demonstrating state management in React.</p>
-              </div>
-              <div className="project-card">
+              </a>
+              <a href="https://github.com/JudahDevelops/drum-machine" className="project-card" target="_blank" rel="noopener noreferrer">
                 <h3>Drum Machine</h3>
                 <p>An interactive audio app highlighting DOM manipulation and event handling.</p>
-              </div>
-              <div className="project-card">
-                <h3>Markdown Reviewer</h3>
+              </a>
+              <a href="https://github.com/JudahDevelops/markdown-previewer" className="project-card" target="_blank" rel="noopener noreferrer">
+                <h3>Markdown Previewer</h3>
                 <p>A utility for parsing and previewing markdown text in real time.</p>
-              </div>
+              </a>
             </div>
             <p className="projects-goal">Each project is a stepping stone toward my larger goal: <strong>developing software that generates revenue while solving everyday challenges.</strong></p>
           </section>
@@ -121,10 +122,11 @@ function App() {
             <h3>Let's Connect</h3>
             <p>Ready to create something extraordinary? Reach out.</p>
             <div className="social-links">
-              {/* Replace with your actual links */}
-              <a href="#" aria-label="GitHub"><FaGithub /></a>
-              <a href="#" aria-label="LinkedIn"><FaLinkedin /></a>
-              <a href="#" aria-label="Email"><FaEnvelope /></a>
+              <a href="https://github.com/JudahDevelops" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+              <div className="email-display">
+                <FaEnvelope />
+                <span>judahdevelops@gmail.com</span>
+              </div>
             </div>
           </div>
         </div>
