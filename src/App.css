@@ -352,6 +352,7 @@ footer {
     flex-direction: column;
     text-align: center;
     padding: 2rem;
+    grid-template-columns: 1fr;
   }
 
   .about-visual {
@@ -398,8 +399,8 @@ footer {
   }
 
   .social-links {
+    flex-wrap: wrap;
     justify-content: center;
-    display: flex;
   }
 }
 
