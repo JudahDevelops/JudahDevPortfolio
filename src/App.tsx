@@ -123,6 +123,7 @@ function App() {
             <p>Ready to create something extraordinary? Reach out.</p>
             <div className="social-links">
               <a href="https://github.com/JudahDevelops" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+              <a href="https://www.linkedin.com/in/judah-develops-841321322" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
               <div className="email-display">
                 <FaEnvelope />
                 <span>judahdevelops@gmail.com</span>
