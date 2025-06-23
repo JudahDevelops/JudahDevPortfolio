@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaLinkedin, FaEnvelope, FaCode } from 'react-icons/fa';
+import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaLinkedin, FaEnvelope, FaCode, FaBrain } from 'react-icons/fa';
 import { CgPen } from 'react-icons/cg';
 import './App.css'
 
@@ -29,7 +29,7 @@ function App() {
           <section id="about" className="about-section">
             <div className="about-text">
               <h2>About Me</h2>
-              <p>From the moment I wrote my first line of code at the age of six, I knew software development was my calling. Now a second-year university student and self-taught developer, I combine structured education with hands-on learning to build digital solutions that solve real-world problems.</p>
+              <p>Hi! My name is <strong>Chidubem Barack-Judah Oka</strong>. From the moment I wrote my first line of code at the age of six, I knew software development was my calling. Now a second-year university student and self-taught developer, I combine structured education with hands-on learning to build digital solutions that solve real-world problems.</p>
               <p>My journey—from tinkering with game development to mastering full-stack web technologies—has shaped me into a versatile programmer with a passion for AI, web development, and database systems.</p>
             </div>
             <div className="about-visual">
@@ -53,12 +53,17 @@ function App() {
               <div className="skill-card">
                 <FaGitAlt className="skill-icon" />
                 <h3>Tools & Workflow</h3>
-                <p>Git, GitHub, Linux, Boilerplate AI</p>
+                <p>Git, GitHub, Linux, Boilerplate</p>
               </div>
               <div className="skill-card">
                 <CgPen className="skill-icon" />
                 <h3>UI/UX Design</h3>
                 <p>Crafting intuitive, user-centric interfaces</p>
+              </div>
+              <div className="skill-card">
+                <FaBrain className="skill-icon" />
+                <h3>AI Consulting</h3>
+                <p>Leveraging AI to solve problems and increase efficiency</p>
               </div>
             </div>
             <p className="skills-summary">My approach is project-driven—I learn best by building. Whether optimizing databases or designing interactive web apps, I focus on writing clean, efficient code that delivers value.</p>
