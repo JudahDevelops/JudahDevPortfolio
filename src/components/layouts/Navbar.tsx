@@ -1,4 +1,3 @@
-import { useState } from 'react';
 
 interface NavbarProps {
   isNavOpen: boolean;
@@ -16,6 +15,7 @@ function Navbar({ isNavOpen, setIsNavOpen }: NavbarProps) {
         <nav className={`nav ${isNavOpen ? 'nav--visible' : ''}`}>
           <a href="#about" onClick={() => setIsNavOpen(false)}>About</a>
           <a href="#skills" onClick={() => setIsNavOpen(false)}>Skills</a>
+          <a href="#experience" onClick={() => setIsNavOpen(false)}>Experience</a>
           <a href="#projects" onClick={() => setIsNavOpen(false)}>Projects</a>
           <a href="#vision" onClick={() => setIsNavOpen(false)}>Vision</a>
           <a href="#contact" onClick={() => setIsNavOpen(false)}>Contact</a>

@@ -157,7 +157,7 @@ section {
 }
 
 /* Modern Section Divider */
-section:not(:last-of-type):not(#about)::after {
+section:not(:last-of-type):not(#about):not(#experience)::after {
   content: '';
   position: absolute;
   bottom: -1px;
@@ -211,6 +211,90 @@ section h2 {
   margin-top: 3rem;
   text-align: center;
   font-size: 1.1rem;
+}
+
+/* --- Experience Section --- */
+#experience {
+  margin-top: 3rem;
+}
+
+.experience-container {
+  max-width: 800px;
+  margin: 0;
+}
+
+.experience-card {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.experience-logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.experience-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.experience-content {
+  flex: 1;
+}
+
+.experience-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+}
+
+.experience-company {
+  font-size: 1rem;
+  color: #bbb;
+  margin: 0 0 0.5rem 0;
+}
+
+.experience-duration {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 1rem 0;
+}
+
+.experience-location {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 1rem 0;
+}
+
+.experience-description {
+  color: #bbb;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* --- Vision Section --- */
@@ -401,6 +485,17 @@ footer {
   .social-links {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  /* Experience Card Mobile Layout */
+  .experience-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .experience-logo {
+    margin-bottom: 1.5rem;
   }
 }
 
