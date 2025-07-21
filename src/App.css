@@ -238,7 +238,9 @@ header h1 {
   width: 2em;
   height: 3px;
   background: white;
-  transition: transform 250ms ease-in-out;
+  border-radius: 3px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
 }
 
 .hamburger::before,
@@ -249,28 +251,41 @@ header h1 {
   right: 0;
   height: 3px;
   background: white;
-  transition: transform 250ms ease-in-out, opacity 250ms linear;
+  border-radius: 3px;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
 }
 
 .hamburger::before {
   top: -8px;
+  transform: translateY(0) rotate(0deg);
 }
 
 .hamburger::after {
   bottom: -8px;
+  transform: translateY(0) rotate(0deg);
 }
 
+/* Enhanced animation when nav is visible */
 .nav--visible .hamburger {
-  transform: rotate(45deg);
+  background: transparent;
 }
 
 .nav--visible .hamburger::before {
-  transform: rotate(90deg);
   top: 0;
+  transform: translateY(8px) rotate(45deg);
 }
 
 .nav--visible .hamburger::after {
-  opacity: 0;
+  bottom: 0;
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Add a subtle pulse effect when hovered */
+.nav-toggle:hover .hamburger,
+.nav-toggle:hover .hamburger::before,
+.nav-toggle:hover .hamburger::after {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 /* --- Main Content & Sections --- */
@@ -857,7 +872,7 @@ footer {
 
   .about-section {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
     padding: 2rem;
     grid-template-columns: 1fr;
     margin: 1.5rem 0;
@@ -877,18 +892,19 @@ footer {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: #121212;
+    height: 60vh; /* Reduced from full height to 60% */
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(0.5, 0, 0.5, 1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     z-index: 1001; /* Higher than header but lower than toggle */
-    padding: 100vh 0 0;
-    opacity: 99%;
-    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
 
   .nav--visible {
@@ -896,12 +912,20 @@ footer {
   }
 
   .nav a {
-    font-size: 1.5rem;
-    margin: 1.5rem 0;
+    font-size: 1.1rem; /* Reduced from 1.5rem */
+    margin: 0.75rem 0; /* Reduced from 1.5rem */
     color: #EAEAEA;
     text-decoration: none;
     display: block;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem; /* Slightly reduced padding */
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
+
+  .nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    transform: translateX(5px);
   }
 
   .footer-grid {
