@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaLinkedin, FaEnvelope, FaCode, FaBrain } from 'react-icons/fa';
+import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaCode, FaBrain } from 'react-icons/fa';
 import { CgPen } from 'react-icons/cg';
+import Navbar from './components/layouts/Navbar';
+import Footer from './components/layouts/Footer';
 import './App.css'
 
 function App() {
@@ -8,21 +10,7 @@ function App() {
 
   return (
     <>
-      <header>
-        <div className="container header-container">
-          <h1>Judah Develops</h1>
-          <button className="nav-toggle" aria-label="toggle navigation" onClick={() => setIsNavOpen(!isNavOpen)}>
-            <span className="hamburger"></span>
-          </button>
-          <nav className={`nav ${isNavOpen ? 'nav--visible' : ''}`}>
-            <a href="#about" onClick={() => setIsNavOpen(false)}>About</a>
-            <a href="#skills" onClick={() => setIsNavOpen(false)}>Skills</a>
-            <a href="#projects" onClick={() => setIsNavOpen(false)}>Projects</a>
-            <a href="#vision" onClick={() => setIsNavOpen(false)}>Vision</a>
-            <a href="#contact" onClick={() => setIsNavOpen(false)}>Contact</a>
-          </nav>
-        </div>
-      </header>
+      <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
       <div className="container">
         <main>
@@ -117,29 +105,7 @@ function App() {
         </main>
       </div>
 
-      <footer id="contact">
-        <div className="footer-grid">
-          <div className="footer-about">
-            <h3>Judah Develops</h3>
-            <p>A lifelong passion for building meaningful technology, merging technical expertise with entrepreneurial thinking to turn ideas into impactful, revenue-generating solutions.</p>
-          </div>
-          <div className="footer-connect">
-            <h3>Let's Connect</h3>
-            <p>Ready to create something extraordinary? Reach out.</p>
-            <div className="social-links">
-              <a href="https://github.com/JudahDevelops" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-              <a href="https://www.linkedin.com/in/chidubem-oka-841321322" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-              <div className="email-display">
-                <FaEnvelope />
-                <span>judahdevelops@gmail.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Judah Develops. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
