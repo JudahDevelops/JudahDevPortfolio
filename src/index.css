@@ -1,17 +1,38 @@
  /* Global Styles */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for sticky header */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Enhanced smooth scrolling for all browsers */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal overflow globally */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #121212; /* A slightly softer black */
-  color: #EAEAEA; /* A gentle off-white for text */
+  background: #121212;
+  background-image: 
+    radial-gradient(ellipse at top left, rgba(30, 30, 30, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(25, 25, 25, 0.4) 0%, transparent 50%),
+    linear-gradient(135deg, #121212 0%, #0f0f0f 30%, #1a1a1a 70%, #151515 100%);
+  background-attachment: fixed;
+  color: #EAEAEA;
   font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 112.5%; /* Increases base font size to 18px from default 16px */
+  font-size: 112.5%;
   margin: 0;
   padding: 0;
   line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
 }
+
 
 .container {
   max-width: 900px;
@@ -22,11 +43,13 @@ body {
 a {
   color: #FFFFFF;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 a:hover {
-  color: #AAAAAA; /* Subtle hover effect */
+  color: #FFFFFF;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 h1, h2 {

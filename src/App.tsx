@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaCode, FaBrain } from 'react-icons/fa';
 import { CgPen } from 'react-icons/cg';
 import Navbar from './components/layouts/Navbar';
@@ -103,9 +103,59 @@ const visionData = [
 
 function App() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  // Update scroll progress
+  useEffect(() => {
+    const updateScrollProgress = () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = (scrollTop / scrollHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', updateScrollProgress);
+    return () => window.removeEventListener('scroll', updateScrollProgress);
+  }, []);
+
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observeElements = () => {
+      // Different settings for mobile vs desktop
+      const isMobile = window.innerWidth <= 768;
+      
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-in');
+            }
+          });
+        },
+        {
+          threshold: isMobile ? 0.05 : 0.1, // Lower threshold for mobile
+          rootMargin: isMobile ? '0px 0px -20px 0px' : '0px 0px -50px 0px' // Less margin on mobile
+        }
+      );
+
+      // Observe sections and cards
+      const elementsToObserve = document.querySelectorAll(
+        '.about-section, .about-text h2, .about-text p, section h2, .skill-card, .experience-card, .project-card, .vision-card'
+      );
+      
+      elementsToObserve.forEach((el) => observer.observe(el));
+
+      return () => observer.disconnect();
+    };
+
+    // Delay observation to ensure DOM is ready
+    const timeoutId = setTimeout(observeElements, 100);
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
     <>
+      <div className="scroll-progress" style={{ transform: `scaleX(${scrollProgress / 100})` }}></div>
       <Navbar isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 
       <div className="container">
