@@ -950,7 +950,9 @@ footer {
   }
 
   .experience-logo {
-    margin-bottom: 1.5rem;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1rem;
   }
 
   /* Mobile-specific scroll animations - reduced motion */
