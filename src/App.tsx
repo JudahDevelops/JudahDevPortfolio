@@ -46,7 +46,7 @@ const experienceData = [
     title: "Frontend Developer",
     company: "Belsoft Systems Limited",
     type: "Internship",
-    duration: "Jul 2025 - Present • 1 mo",
+    duration: "Jul 2025 - Oct 2025",
     location: "Abuja, Federal Capital Territory, Nigeria • Remote",
     logo: BelsoftLogo,
     description: "Currently working as a Frontend Developer intern, contributing to web development projects and enhancing user interfaces. Gaining hands-on experience with modern frontend technologies and collaborating with development teams to deliver high-quality digital solutions."
