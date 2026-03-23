@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer-grid">
         <div className="footer-about">
           <h3>Judah Develops</h3>
-          <p>A lifelong passion for building meaningful technology, merging technical expertise with entrepreneurial thinking to turn ideas into impactful, revenue-generating solutions.</p>
+          <p>Helping Nigerian SMEs save time and money through AI automation. Specializing in Real Estate, Fashion, and Logistics workflow optimization. Building practical, high-ROI solutions that solve uniquely Nigerian business challenges.</p>
         </div>
         <div className="footer-connect">
           <h3>Let's Connect</h3>

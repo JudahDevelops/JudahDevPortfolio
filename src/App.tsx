@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaCode, FaBrain } from 'react-icons/fa';
-import { CgPen } from 'react-icons/cg';
 import Navbar from './components/layouts/Navbar';
 import Footer from './components/layouts/Footer';
 import BelsoftLogo from './assets/images/Belsoft-Logo.jpg';
@@ -12,71 +11,81 @@ const skillsData = [
     id: 1,
     icon: FaReact,
     title: "Frontend Development",
-    description: "HTML, CSS, JavaScript, React"
+    description: "React, JavaScript, HTML, CSS, Tailwind CSS"
   },
   {
     id: 2,
     icon: FaDatabase,
-    title: "Backend & Automation",
-    description: "Python, Bash, PostgreSQL"
+    title: "Backend & Database",
+    description: "Python, Flask, PostgreSQL, API integrations"
   },
   {
     id: 3,
-    icon: FaGitAlt,
-    title: "Tools & Workflow",
-    description: "Git, GitHub, Linux, Boilerplate"
+    icon: FaBrain,
+    title: "AI Automation & Workflows",
+    description: "n8n, Make.com, WhatsApp Business API, Telegram Bot API, OpenAI API, AI agent development"
   },
   {
     id: 4,
-    icon: CgPen,
-    title: "UI/UX Design",
-    description: "Crafting intuitive, user-centric interfaces"
+    icon: FaGitAlt,
+    title: "Tools & DevOps",
+    description: "Git, GitHub, Linux, Bash scripting"
   },
   {
     id: 5,
-    icon: FaBrain,
-    title: "AI Consulting",
-    description: "Leveraging AI to solve problems and increase efficiency"
+    icon: FaLaptopCode,
+    title: "Business Process Analysis",
+    description: "Identifying automation opportunities in Nigerian SMEs (Real Estate, Fashion, Logistics)"
   }
 ];
 
 const experienceData = [
   {
     id: 1,
+    title: "AI Automation Consultant",
+    company: "Freelance / Independent",
+    type: "Self-Employed",
+    duration: "Oct 2025 - Present",
+    location: "Nigeria • Remote",
+    logo: BelsoftLogo, // Will use placeholder for now
+    description: "Building AI-powered automation systems for Nigerian SMEs, specializing in lead qualification, WhatsApp bot integrations, and workflow optimization. Primary focus on Real Estate, Fashion, and Logistics industries. Developed systems using n8n, WhatsApp Business API, and OpenAI that save businesses 10+ hours per week on repetitive tasks and reduce operational costs by automating customer communication and lead routing."
+  },
+  {
+    id: 2,
     title: "Frontend Developer",
     company: "Belsoft Systems Limited",
     type: "Internship",
     duration: "Jul 2025 - Oct 2025",
     location: "Abuja, Federal Capital Territory, Nigeria • Remote",
     logo: BelsoftLogo,
-    description: "Currently working as a Frontend Developer intern, contributing to web development projects and enhancing user interfaces. Gaining hands-on experience with modern frontend technologies and collaborating with development teams to deliver high-quality digital solutions."
+    description: "Worked as a Frontend Developer intern, contributing to web development projects and enhancing user interfaces. Gained hands-on experience with modern frontend technologies and collaborated with development teams to deliver high-quality digital solutions."
   }
 ];
 
 const projectsData = [
   {
     id: 1,
-    title: "Pomodoro Timer",
-    description: "A productivity tool to enhance focus using customizable work/break intervals.",
-    url: "https://github.com/JudahDevelops/pomodoro-timer"
+    title: "Real Estate Lead Qualification Bot",
+    description: "WhatsApp automation that filters 'tire kickers' for Nigerian Realtors, saving ₦50k+ monthly in wasted fuel costs. Built with n8n, WhatsApp Business API, and OpenAI for intelligent lead routing.",
+    url: "https://github.com/JudahDevelops" // Update with actual repo when available
   },
   {
     id: 2,
-    title: "React Calculator",
-    description: "A dynamic, responsive calculator demonstrating state management in React.",
-    url: "https://github.com/JudahDevelops/react-calculator"
+    title: "Nigerian SME Automation Workflows",
+    description: "Collection of n8n workflow templates for Nigerian businesses including invoice reminders, Instagram DM automation, and lead qualification systems. Documented for easy implementation with Nigerian market context.",
+    url: "https://github.com/JudahDevelops" // Update with actual repo when available
   },
   {
     id: 3,
-    title: "Drum Machine",
-    description: "An interactive audio app highlighting DOM manipulation and event handling.",
-    url: "https://github.com/JudahDevelops/drum-machine"
+    title: "AI Agent System Prompt Library",
+    description: "CO-STAR framework-based system prompts for business automation agents on Telegram, WhatsApp, and Instagram. Optimized for Nigerian communication patterns and business workflows.",
+    url: "https://github.com/JudahDevelops" // Update with actual repo when available
   },
   {
     id: 4,
-    title: "Markdown Previewer",
-    description: "A utility for parsing and previewing markdown text in real time.",
-    url: "https://github.com/JudahDevelops/markdown-previewer"
+    title: "React Calculator",
+    description: "A dynamic, responsive calculator demonstrating state management in React and component-based architecture.",
+    url: "https://github.com/JudahDevelops/react-calculator"
   }
 ];
 
@@ -84,20 +93,20 @@ const visionData = [
   {
     id: 1,
     icon: FaLaptopCode,
-    title: "Build Scalable Solutions",
-    description: "Create web apps and AI-driven tools that streamline workflows."
+    title: "Democratize AI Automation for Nigerian Businesses",
+    description: "Make AI automation accessible to solo operators and SMEs who can't afford enterprise IT departments. Focus on practical, high-ROI solutions that solve real Nigerian business problems."
   },
   {
     id: 2,
-    icon: FaDollarSign,
-    title: "Monetize Innovation",
-    description: "Develop products that blend utility with profitability, from SaaS to automation scripts."
+    icon: FaGithub,
+    title: "Build the Nigerian Automation Playbook",
+    description: "Create open-source workflows, templates, and case studies tailored to Nigerian business challenges like fuel costs, Lagos traffic, and WhatsApp-first communication patterns."
   },
   {
     id: 3,
-    icon: FaGithub,
-    title: "Contribute to Open Source",
-    description: "Share knowledge and collaborate with global developer communities."
+    icon: FaBrain,
+    title: "Scale Through Education",
+    description: "Teach Nigerian business owners to think in automations through YouTube content, free resources, and transparent case studies showing real implementation results."
   }
 ];
 
@@ -163,8 +172,8 @@ function App() {
           <section id="about" className="about-section">
             <div className="about-text">
               <h2>About Me</h2>
-              <p>Hi! My name is <strong>Chidubem Barack-Judah Oka</strong>. From the moment I wrote my first line of code at the age of six, I knew software development was my calling. Now a second-year university student and self-taught developer, I combine structured education with hands-on learning to build digital solutions that solve real-world problems.</p>
-              <p>My journey—from tinkering with game development to mastering full-stack web technologies—has shaped me into a versatile programmer with a passion for AI, web development, and database systems.</p>
+              <p>Hi! My name is <strong>Chidubem Barack-Judah Oka</strong>. I'm a software engineer pivoting into AI automation consulting, specializing in building intelligent workflow systems for Nigerian SMEs. While I've been coding since age six and have experience across full-stack development, I've found my focus in solving real business problems through automation.</p>
+              <p>I help Nigerian businesses in Real Estate, Fashion, and Logistics save time and money by automating repetitive tasks. Whether it's building WhatsApp bots that filter unqualified leads or creating workflows that handle customer inquiries 24/7, my work focuses on practical, high-ROI solutions that address uniquely Nigerian challenges like fuel costs, Lagos traffic delays, and WhatsApp-first communication patterns.</p>
             </div>
             <div className="about-visual">
               <FaCode className="about-icon" />
@@ -232,7 +241,7 @@ function App() {
 
           <section id="vision">
             <h2>Future Vision</h2>
-            <p>I'm particularly drawn to AI and database management—fields with limitless potential to transform industries. My ambition is to:</p>
+            <p>My mission is to make AI automation a practical, accessible skill for Nigerian businesses. I believe we're at a unique point where solo operators can compete with companies that have entire IT departments, and I want to accelerate that shift. My ambition is to:</p>
             <div className="vision-grid">
               {visionData.map((vision) => {
                 const IconComponent = vision.icon;
