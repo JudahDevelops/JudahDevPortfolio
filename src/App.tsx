@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaDollarSign, FaGithub, FaCode, FaBrain } from 'react-icons/fa';
+import { FaReact, FaDatabase, FaGitAlt, FaLaptopCode, FaGithub, FaCode, FaBrain, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Navbar from './components/layouts/Navbar';
 import Footer from './components/layouts/Footer';
 import BelsoftLogo from './assets/images/Belsoft-Logo.jpg';
@@ -62,30 +62,28 @@ const experienceData = [
   }
 ];
 
-const projectsData = [
+
+const socialLinks = [
   {
     id: 1,
-    title: "Real Estate Lead Qualification Bot",
-    description: "WhatsApp automation that filters 'tire kickers' for Nigerian Realtors, saving ₦50k+ monthly in wasted fuel costs. Built with n8n, WhatsApp Business API, and OpenAI for intelligent lead routing.",
-    url: "https://github.com/JudahDevelops" // Update with actual repo when available
+    name: "LinkedIn",
+    icon: FaLinkedin,
+    url: "https://www.linkedin.com/in/chidubem-oka-841321322/",
+    description: "Connect with me professionally"
   },
   {
     id: 2,
-    title: "Nigerian SME Automation Workflows",
-    description: "Collection of n8n workflow templates for Nigerian businesses including invoice reminders, Instagram DM automation, and lead qualification systems. Documented for easy implementation with Nigerian market context.",
-    url: "https://github.com/JudahDevelops" // Update with actual repo when available
+    name: "X (Twitter)",
+    icon: FaTwitter,
+    url: "https://x.com/JudahDevelops",
+    description: "Follow my automation insights"
   },
   {
     id: 3,
-    title: "AI Agent System Prompt Library",
-    description: "CO-STAR framework-based system prompts for business automation agents on Telegram, WhatsApp, and Instagram. Optimized for Nigerian communication patterns and business workflows.",
-    url: "https://github.com/JudahDevelops" // Update with actual repo when available
-  },
-  {
-    id: 4,
-    title: "React Calculator",
-    description: "A dynamic, responsive calculator demonstrating state management in React and component-based architecture.",
-    url: "https://github.com/JudahDevelops/react-calculator"
+    name: "GitHub",
+    icon: FaGithub,
+    url: "https://github.com/JudahDevelops",
+    description: "Check out my code"
   }
 ];
 
@@ -149,7 +147,7 @@ function App() {
 
       // Observe sections and cards
       const elementsToObserve = document.querySelectorAll(
-        '.about-section, .about-text h2, .about-text p, section h2, .skill-card, .experience-card, .project-card, .vision-card'
+        '.about-section, .about-text h2, .about-text p, section h2, .skill-card, .experience-card, .social-card, .vision-card'
       );
       
       elementsToObserve.forEach((el) => observer.observe(el));
@@ -194,7 +192,6 @@ function App() {
                 );
               })}
             </div>
-            <p className="skills-summary">My approach is project-driven—I learn best by building. Whether optimizing databases or designing interactive web apps, I focus on writing clean, efficient code that delivers value.</p>
           </section>
 
           <section id="experience">
@@ -219,24 +216,27 @@ function App() {
             </div>
           </section>
 
-          <section id="projects">
-            <h2>Projects & Impact</h2>
-            <p className="section-intro">Here are some of my project repositories:</p>
-            <div className="projects-grid">
-              {projectsData.map((project) => (
-                <a 
-                  key={project.id}
-                  href={project.url} 
-                  className="project-card" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </a>
-              ))}
+          <section id="connect">
+            <h2>Let's Connect</h2>
+            <p className="section-intro">Building AI automation solutions for Nigerian businesses. Let's work together to solve your workflow challenges.</p>
+            <div className="social-grid">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.id}
+                    href={social.url}
+                    className="social-card"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <IconComponent className="social-icon" />
+                    <h3>{social.name}</h3>
+                    <p>{social.description}</p>
+                  </a>
+                );
+              })}
             </div>
-            <p className="projects-goal">Each project is a stepping stone toward my larger goal: <strong>developing software that generates revenue while solving everyday challenges.</strong></p>
           </section>
 
           <section id="vision">

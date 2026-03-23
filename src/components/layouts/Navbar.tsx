@@ -16,9 +16,8 @@ function Navbar({ isNavOpen, setIsNavOpen }: NavbarProps) {
           <a href="#about" onClick={() => setIsNavOpen(false)}>About</a>
           <a href="#skills" onClick={() => setIsNavOpen(false)}>Skills</a>
           <a href="#experience" onClick={() => setIsNavOpen(false)}>Experience</a>
-          <a href="#projects" onClick={() => setIsNavOpen(false)}>Projects</a>
           <a href="#vision" onClick={() => setIsNavOpen(false)}>Vision</a>
-          <a href="#contact" onClick={() => setIsNavOpen(false)}>Contact</a>
+          <a href="#connect" onClick={() => setIsNavOpen(false)}>Connect</a>
         </nav>
       </div>
     </header>
